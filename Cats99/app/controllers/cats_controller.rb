@@ -1,4 +1,5 @@
 class CatsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   def index
     @cats = Cat.all
     render json: @cats
@@ -13,7 +14,7 @@ class CatsController < ApplicationController
     @cat = Cat.new(cat_params)
 
     if @cat.save!
-      redirect_url cat_url(@cat)
+      redirect_to cat_url(@cat)
     else
       render json: @cat.errors.full_messages, status: :unprocessable_entity
     end

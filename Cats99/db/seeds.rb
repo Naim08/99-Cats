@@ -20,13 +20,15 @@ ApplicationRecord.transaction do
   # Reset the id (i.e., primary key) counters for each table to start at 1
   # (helpful for debugging)
   puts 'Resetting id sequences...'
-  %w(users artworks artwork_shares).each do |table_name|
+  %w(cats).each do |table_name|
     ApplicationRecord.connection.reset_pk_sequence!(table_name)
   end
 
 cat1 = Cat.create!(name: "puss", color: "orange", sex: "M", birth_date: "2015/01/20", description: "Puss loves his boots")
-
-
+cat2 = Cat.create!(name: "meowy", color: "white", sex: "F", birth_date: "2000/04/20", description: "ME-OW? NO. YOU OW")
+cat3 = Cat.create!(name: "pickles", color: "brown", sex: "M", birth_date: "2005/02/09", description: "its me. zi, ive been turned into a cat, i mean, meow.")
+cat4 = Cat.create!(name: "cain", color: "black", sex: "M", birth_date: "2004/03/14", description: "cain feels no pain")
+cat5 = Cat.create!(name: "emily", color: "orange", sex: "F", birth_date: "2020/08/08", description: "orange power!")
   puts "Done with #{Rails.env} environment!"
 end
 
