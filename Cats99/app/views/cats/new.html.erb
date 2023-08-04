@@ -1,0 +1,20 @@
+<form action="<%= cats_url %>" value="POST">
+<label for="name">Name:
+<input type="text" id="name" name="cat[name]" value="@cat.name">
+</label>
+<label for="sex">Sex:
+<input type="radio" id="M" name="cat[sex]" value="@cat.sex">
+  <label for="M">Male</label>
+  <input type="radio" id="F" name="cat[sex]" valeu="@cat.sex">
+  <label for="F">Female</label>
+</label>
+<label for="color">Color:
+<input type="text" id="color" name="cat[color]" value="@cat.color">
+</label>
+<label for="birth_date">Birth Date
+<input type="date" id="birth_date" name="cat[birth_date]" value="@cat.birth_date">
+</label>
+<label for="description">Description
+<input type="text" id="description" name="cat[description]" value="@cat.description">
+</label>
+</form>
