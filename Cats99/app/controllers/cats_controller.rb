@@ -2,7 +2,7 @@ class CatsController < ApplicationController
   skip_before_action :verify_authenticity_token
   def index
     @cats = Cat.all
-    render json: @cats
+    render :index
   end
 
   def show
@@ -29,6 +29,12 @@ class CatsController < ApplicationController
     end
   end
 
+  def new
+
+  end
+  def edit
+
+  end
   private
 
   def cat_params
